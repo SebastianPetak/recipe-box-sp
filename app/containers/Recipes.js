@@ -1,13 +1,13 @@
 const React = require('react');
 
-module.exports = class Main extends React.Component {
+module.exports = class Recipes extends React.Component {
 	constructor(props) {
 		super(props);
 	}
 	render() {
 		return (
 			<div>
-				{this.props.children}
+				Recipes has rendered!
 			</div>
 		);
 	}
