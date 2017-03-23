@@ -1,4 +1,5 @@
 const React = require('react');
+const RecipesHeading = require('../components/RecipesHeading');
 
 module.exports = class Recipes extends React.Component {
 	constructor(props) {
@@ -6,8 +7,8 @@ module.exports = class Recipes extends React.Component {
 	}
 	render() {
 		return (
-			<div>
-				Recipes has rendered!
+			<div className='container'>
+				<RecipesHeading />
 			</div>
 		);
 	}
