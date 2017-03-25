@@ -1,5 +1,6 @@
 const React = require('react');
 const _ = require('lodash/core');
+const defaultRecipes = require('../assets/defaultRecipes.js');
 const RecipesHeading = require('../components/RecipesHeading');
 const RecipeList = require('../components/RecipeList');
 const RecipeFooter = require('../components/RecipeFooter');
@@ -13,44 +14,27 @@ module.exports = class Recipes extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			recipes: {}
+			recipes: defaultRecipes,
+			localStorageSupport: true
 		};
 		const self = this;
-		self.meal1 = {
-			name: 'Meal1Name',
-			ingredients: [1,2,3,4,5],
-			instructions: ['1. ksadfjasdkfjdsfjads','2. aldajsfka dfads f adsf sjdf', '3. akajf fdjkas asdfkjadf dkjadf adfasdf asdf asdf asdf sadf asd fsd asd fasdf'],
-			image: 'https://images.nypl.org/index.php?id=1588340&t=w'
-		};
-		self.meal2 = {
-			name: 'Meal2Name',
-			ingredients: [1,2,3,4,5],
-			instructions: [1,2,3],
-			image: 'https://images.nypl.org/index.php?id=1586958&t=w'
-		};
-		self.meal3 = {
-			name: 'Meal3Name',
-			ingredients: [1,2,3,4,5],
-			instructions: [1,2,3],
-			image: 'https://images.nypl.org/index.php?id=1588340&t=w'
-		};
-		self.meal4 = {
-			name: 'Meal4Name',
-			ingredients: [1,2,3,4,5],
-			instructions: [1,2,3],
-			image: 'https://images.nypl.org/index.php?id=1588340&t=w'
-		};
-	}
-
-	componentDidMount() {
-		this.setState({
-			recipes: [
-				this.meal1,
-				this.meal2,
-				this.meal3,
-				this.meal4
-			]
-		});
+/* For Storing user changes in later update
+		if (typeof(Storage) == 'undefined') {
+			// User is using a browser that doesn't support local storage
+			this.setState({
+				localStorageSupport: false
+			});
+		} else if (typeof(localStorage._sebastianpetak_recipes) !== 'undefined') {
+			// Retrieve localStorage from users browser
+			let usersLocalStorage = localStorage.getItem('_sebastianpetak_recipes');
+			self.setState({
+				recipes: usersLocalStorage
+			});
+		} else {
+			// Create local storage object _sebastianpetak_recipes
+			localStorage.setItem('_sebastianpetak_recipes', self.state.recipes);
+		}
+		*/
 	}
 
 	render() {
