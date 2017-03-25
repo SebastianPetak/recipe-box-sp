@@ -2,6 +2,7 @@ const React = require('react');
 const _ = require('lodash/core');
 const RecipesHeading = require('../components/RecipesHeading');
 const RecipeList = require('../components/RecipeList');
+const RecipeFooter = require('../components/RecipeFooter');
 
 const recipeListingStyles = require('../styles/styles.js').recipeListingStyles;
 const listingFigTitleStyles = require('../styles/styles.js').listingFigTitleStyles;
@@ -79,7 +80,8 @@ module.exports = class Recipes extends React.Component {
 		return (
 			<div className='container'>
 				<RecipesHeading />
-				<RecipeList currentRecipes={currentRecipes}/>
+				<RecipeList currentRecipes={currentRecipes} />
+				<RecipeFooter />
 			</div>
 		);
 	}

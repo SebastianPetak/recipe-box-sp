@@ -4,7 +4,9 @@ const styles = {
 		width: '100%',
 		backgroundColor: '#FF6347',
 		color: '#FDF5E6',
-		marginBottom: '1.5em'
+		marginBottom: '1.5em',
+		border: '1px solid #FF6347',
+		borderRadius: '0px 0px 5px 5px'
 	},
 	topBarTitleStyles: {
 		marginLeft: '10%',
@@ -25,6 +27,9 @@ const styles = {
 
 	/* RecipeList styles */
 	// ListingDivStyles allows for Overflow image with vertical centering
+	fullListDivStyles: {
+		minHeight: '600px'
+	},
 	listingDivStyles: {
 		position: 'relative',
 		height: '200px',
@@ -50,6 +55,21 @@ const styles = {
 		fontFamily: 'Signika Negative',
 		fontSize: '1em',
 		color: '#47e3ff'
+	},
+	/* RecipeFooter Styles */
+	footerRowStyles: {
+		marginTop: '1.5em',
+		backgroundColor: '#47e3ff',
+		textAlign: 'center',
+		color: '#191919',
+		fontFamily: 'Signika Negative',
+		fontSize: '1.3em',
+		border: '2px solid #47e3ff',
+		borderRadius: '5px'
+	},
+	footerIconStyles: {
+		fontSize: '100px',
+		color: '#FDF5E6'
 	}
 };
 
