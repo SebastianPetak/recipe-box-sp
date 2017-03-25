@@ -6,6 +6,7 @@ const RecipeList = require('../components/RecipeList');
 const recipeListingStyles = require('../styles/styles.js').recipeListingStyles;
 const listingFigTitleStyles = require('../styles/styles.js').listingFigTitleStyles;
 const listingFigTextStyles = require('../styles/styles.js').listingFigTextStyles;
+const listingDivStyles = require('../styles/styles.js').listingDivStyles;
 
 module.exports = class Recipes extends React.Component {
 	constructor(props) {
@@ -65,7 +66,9 @@ module.exports = class Recipes extends React.Component {
 				shortInstructions = strInstructions;
 				return (
 					<div key={recipe.name} className='small-6 large-3 columns'>
-						<img style={recipeListingStyles} src={recipe.image} alt={recipe.name} />
+						<div style={listingDivStyles}>
+							<img style={recipeListingStyles} src={recipe.image} alt={recipe.name} />
+						</div>
 						<figcaption style={listingFigTitleStyles}>{recipe.name}</figcaption>
 						<figcaption style={listingFigTextStyles}>{shortInstructions}</figcaption>
 					</div>

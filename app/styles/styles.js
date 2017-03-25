@@ -4,7 +4,7 @@ const styles = {
 		width: '100%',
 		backgroundColor: '#FF6347',
 		color: '#FDF5E6',
-		marginBottom: '1em'
+		marginBottom: '1.5em'
 	},
 	topBarTitleStyles: {
 		marginLeft: '10%',
@@ -24,10 +24,22 @@ const styles = {
 	},
 
 	/* RecipeList styles */
+	// ListingDivStyles allows for Overflow image with vertical centering
+	listingDivStyles: {
+		position: 'relative',
+		height: '200px',
+		width: '100%',
+		overflow: 'hidden',
+	},
 	recipeListingStyles: {
-		maxHeight: '200px',
-		width: 'auto',
-		height: 'auto'
+		position: 'absolute',
+		top: '-100%',
+		left: '0',
+		right: '0',
+		bottom: '-100%',
+		height: 'auto',
+		width: '100%',
+		margin: 'auto'
 	},
 	listingFigTitleStyles: {
 		fontFamily: 'Signika Negative',
