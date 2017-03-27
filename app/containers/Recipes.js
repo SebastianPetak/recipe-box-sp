@@ -14,27 +14,41 @@ module.exports = class Recipes extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			recipes: defaultRecipes,
-			localStorageSupport: true
+			recipes: [],
+			localStorageSupport: false
 		};
 		const self = this;
-/* For Storing user changes in later update
-		if (typeof(Storage) == 'undefined') {
-			// User is using a browser that doesn't support local storage
-			this.setState({
-				localStorageSupport: false
-			});
-		} else if (typeof(localStorage._sebastianpetak_recipes) !== 'undefined') {
-			// Retrieve localStorage from users browser
-			let usersLocalStorage = localStorage.getItem('_sebastianpetak_recipes');
-			self.setState({
-				recipes: usersLocalStorage
-			});
-		} else {
-			// Create local storage object _sebastianpetak_recipes
-			localStorage.setItem('_sebastianpetak_recipes', self.state.recipes);
-		}
-		*/
+
+		self.getLocalStorage = () => {
+			let usersLocalStorage;
+			// Utilize local storage in users browser for storing their recipes
+			if (typeof(Storage) == 'undefined') {
+				// User is using a browser that doesn't support local storage
+				this.setState({
+					recipes: defaultRecipes,
+					localStorageSupport: false
+				});
+			} else if (typeof(localStorage._sebastianpetak_recipes) !== 'undefined') {
+				// Retrieve localStorage from users browser
+				usersLocalStorage = JSON.parse(localStorage.getItem('_sebastianpetak_recipes'));
+				self.setState({
+					recipes: usersLocalStorage,
+					localStorageSupport: true
+				});
+			} else {
+				// Create local storage object _sebastianpetak_recipes
+				localStorage.setItem('_sebastianpetak_recipes', JSON.stringify(defaultRecipes));
+				usersLocalStorage = JSON.parse(localStorage.getItem('_sebastianpetak_recipes'));
+				self.setState({
+					recipes: usersLocalStorage,
+					localStorageSupport: true
+				});
+			}
+		};
+	}
+
+	componentWillMount() {
+		this.getLocalStorage();
 	}
 
 	render() {
