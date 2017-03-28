@@ -64,7 +64,7 @@ module.exports = class Recipes extends React.Component {
 				shortInstructions = strInstructions.substring(0, 115) + '...' :
 				shortInstructions = strInstructions;
 				return (
-					<div key={recipe.name} className='small-6 large-3 columns'>
+					<div key={recipe.id} className='small-6 large-3 columns'>
 						<div style={listingDivStyles}>
 							<img style={recipeListingStyles} src={recipe.image} alt={recipe.name} />
 						</div>

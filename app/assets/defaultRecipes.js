@@ -20,7 +20,8 @@ const meal1 = {
 		`5.  Remove scallops from the pan and place them inside the bowl.
 		Add any dressing that you want and the dish is finished.`
 	],
-	image: 'https://images.pexels.com/photos/128388/pexels-photo-128388.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb'
+	image: 'https://images.pexels.com/photos/128388/pexels-photo-128388.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb',
+	id: 1
 };
 const meal2 = {
 	name: 'Sausages',
@@ -34,7 +35,8 @@ const meal2 = {
 		sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 		mollit anim id est laborum.`
 	],
-	image: 'https://images.pexels.com/photos/96619/pexels-photo-96619.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb'
+	image: 'https://images.pexels.com/photos/96619/pexels-photo-96619.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb',
+	id: 2
 };
 const meal3 = {
 	name: 'Quinoa With Fruits and vegetables',
@@ -46,7 +48,8 @@ const meal3 = {
 		pellentesque est. Mauris molestie faucibus dictum.`,
 		'3. Ut sollicitudin tincidunt mauris, in rutrum libero pharetra vitae.'
 	],
-	image: 'https://images.pexels.com/photos/248509/pexels-photo-248509.jpeg?w=940&h=650&auto=compress&cs=tinysrgb'
+	image: 'https://images.pexels.com/photos/248509/pexels-photo-248509.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
+	id: 3
 };
 const meal4 = {
 	name: 'Sweet PorkChops with biscuts and vegetables',
@@ -61,7 +64,8 @@ const meal4 = {
 		ultrices in. Donec non laoreet enim. Praesent ornare viverra est quis`,
 		'4. commodo. Mauris sagittis ultricies dolor, id luctus eros dictum nec.'
 	],
-	image: 'https://images.pexels.com/photos/248422/pexels-photo-248422.jpeg?w=940&h=650&auto=compress&cs=tinysrgb'
+	image: 'https://images.pexels.com/photos/248422/pexels-photo-248422.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
+	id: 4
 };
 const meal5 = {
 	name: 'Spinach Pasta with Fresh Vegetables',
@@ -73,7 +77,8 @@ const meal5 = {
 		pellentesque est. Mauris molestie faucibus dictum.`,
 		'3. Ut sollicitudin tincidunt mauris, in rutrum libero pharetra vitae.'
 	],
-	image: 'https://images.pexels.com/photos/6461/food-plate-rucola-salad.jpg?w=940&h=650&auto=compress&cs=tinysrgb'
+	image: 'https://images.pexels.com/photos/6461/food-plate-rucola-salad.jpg?w=940&h=650&auto=compress&cs=tinysrgb',
+	id: 5
 };
 const meal6 = {
 	name: 'Peppered Salmon with Salad',
@@ -88,7 +93,8 @@ const meal6 = {
 		ultrices in. Donec non laoreet enim. Praesent ornare viverra est quis`,
 		'4. commodo. Mauris sagittis ultricies dolor, id luctus eros dictum nec.'
 	],
-	image: 'https://images.pexels.com/photos/262982/pexels-photo-262982.jpeg?w=940&h=650&auto=compress&cs=tinysrgb'
+	image: 'https://images.pexels.com/photos/262982/pexels-photo-262982.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
+	id: 6
 };
 const meal7 = {
 	name: 'Sausage Parmesan Pasta',
@@ -102,7 +108,8 @@ const meal7 = {
 		sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
 		mollit anim id est laborum.`
 	],
-	image: 'https://images.pexels.com/photos/154145/pexels-photo-154145.jpeg?w=940&h=650&auto=compress&cs=tinysrgb'
+	image: 'https://images.pexels.com/photos/154145/pexels-photo-154145.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
+	id: 7
 };
 const meal8 = {
 	name: 'Barbeque Chicken Legs',
@@ -117,7 +124,8 @@ const meal8 = {
 		ultrices in. Donec non laoreet enim. Praesent ornare viverra est quis`,
 		'4. commodo. Mauris sagittis ultricies dolor, id luctus eros dictum nec.'
 	],
-	image: 'https://images.pexels.com/photos/145804/pexels-photo-145804.jpeg?w=940&h=650&auto=compress&cs=tinysrgb'
+	image: 'https://images.pexels.com/photos/145804/pexels-photo-145804.jpeg?w=940&h=650&auto=compress&cs=tinysrgb',
+	id: 8
 };
 
 const defaultRecipes = [
