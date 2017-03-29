@@ -6,7 +6,9 @@ module.exports = class Main extends React.Component {
 	}
 	render() {
 		return (
-			<div>Main has Rendered!</div>
+			<div>
+				{this.props.children}
+			</div>
 		);
 	}
 };
