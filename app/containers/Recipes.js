@@ -1,56 +1,26 @@
 const React = require('react');
 const _ = require('lodash/core');
-const defaultRecipes = require('../assets/defaultRecipes.js');
+// Components
 const RecipesHeading = require('../components/RecipesHeading');
 const RecipeList = require('../components/RecipeList');
 const RecipeFooter = require('../components/RecipeFooter');
-
+// Styles
 const recipeListingStyles = require('../styles/styles.js').recipeListingStyles;
 const listingFigTitleStyles = require('../styles/styles.js').listingFigTitleStyles;
 const listingFigTextStyles = require('../styles/styles.js').listingFigTextStyles;
 const listingDivStyles = require('../styles/styles.js').listingDivStyles;
+// Functions
+const getLocalStorage = require('../js/getLocalStorage');
+const checkForLocalStorage = require('../js/checkForLocalStorage');
 
 module.exports = class Recipes extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			recipes: [],
-			localStorageSupport: false
-		};
-		const self = this;
-
-		self.getLocalStorage = () => {
-			let usersLocalStorage;
-			// Utilize local storage in users browser for storing their recipes
-			if (typeof(Storage) == 'undefined') {
-				// User is using a browser that doesn't support local storage
-				this.setState({
-					recipes: defaultRecipes,
-					localStorageSupport: false
-				});
-			} else if (typeof(localStorage._sebastianpetak_recipes) !== 'undefined') {
-				// Retrieve localStorage from users browser
-				usersLocalStorage = JSON.parse(localStorage.getItem('_sebastianpetak_recipes'));
-				self.setState({
-					recipes: usersLocalStorage,
-					localStorageSupport: true
-				});
-			} else {
-				// Create local storage object _sebastianpetak_recipes
-				localStorage.setItem('_sebastianpetak_recipes', JSON.stringify(defaultRecipes));
-				usersLocalStorage = JSON.parse(localStorage.getItem('_sebastianpetak_recipes'));
-				self.setState({
-					recipes: usersLocalStorage,
-					localStorageSupport: true
-				});
-			}
+			recipes: getLocalStorage,
+			localStorageSupport: checkForLocalStorage
 		};
 	}
-
-	componentWillMount() {
-		this.getLocalStorage();
-	}
-
 	render() {
 		// Create individual recipes to pass onto RecipeList component
 		let currentRecipes;
@@ -66,10 +36,16 @@ module.exports = class Recipes extends React.Component {
 				return (
 					<div key={recipe.id} className='small-6 large-3 columns'>
 						<div style={listingDivStyles}>
-							<img style={recipeListingStyles} src={recipe.image} alt={recipe.name} />
+							<img style={recipeListingStyles} src={recipe.image}
+								alt={recipe.name}
+							/>
 						</div>
-						<figcaption style={listingFigTitleStyles}>{recipe.name}</figcaption>
-						<figcaption style={listingFigTextStyles}>{shortInstructions}</figcaption>
+						<figcaption style={listingFigTitleStyles}>
+							{recipe.name}
+						</figcaption>
+						<figcaption style={listingFigTextStyles}>
+							{shortInstructions}
+						</figcaption>
 					</div>
 				);
 			});
