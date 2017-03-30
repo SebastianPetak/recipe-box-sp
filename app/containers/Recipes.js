@@ -10,8 +10,8 @@ const listingFigTitleStyles = require('../styles/styles.js').listingFigTitleStyl
 const listingFigTextStyles = require('../styles/styles.js').listingFigTextStyles;
 const listingDivStyles = require('../styles/styles.js').listingDivStyles;
 // Functions
-const getLocalStorage = require('../js/getLocalStorage');
-const checkForLocalStorage = require('../js/checkForLocalStorage');
+const getLocalStorage = require('../utils/getLocalStorage');
+const checkForLocalStorage = require('../utils/checkForLocalStorage');
 
 module.exports = class Recipes extends React.Component {
 	constructor(props) {
