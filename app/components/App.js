@@ -1,6 +1,6 @@
 const React = require('react');
 
-module.exports = class Main extends React.Component {
+module.exports = class App extends React.Component {
 	constructor(props) {
 		super(props);
 	}

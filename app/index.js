@@ -1,5 +1,17 @@
-const React = require('react');
-const ReactDOM = require('react-dom');
-const routes = require('./config/routes');
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
+import reducers from './reducers';
 
-ReactDOM.render(routes, document.getElementById('app'));
+import App from './components/App';
+import './styles/styles.js';
+
+const store = createStore(reducers);
+
+render(
+	<Provider store={store}>
+		<App />
+	</Provider>,
+	document.getElementById('app')
+);
