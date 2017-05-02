@@ -5,13 +5,13 @@ import { createStore } from 'redux';
 import reducers from './reducers';
 
 import App from './components/App';
-import './styles/styles.js';
+import Recipes from './containers/Recipes';
 
 const store = createStore(reducers);
 
 render(
 	<Provider store={store}>
-		<App />
+		<Recipes />
 	</Provider>,
 	document.getElementById('app')
 );

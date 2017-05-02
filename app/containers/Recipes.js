@@ -9,25 +9,30 @@ const recipeListingStyles = require('../styles/styles.js').recipeListingStyles;
 const listingFigTitleStyles = require('../styles/styles.js').listingFigTitleStyles;
 const listingFigTextStyles = require('../styles/styles.js').listingFigTextStyles;
 const listingDivStyles = require('../styles/styles.js').listingDivStyles;
-// Functions
-const getLocalStorage = require('../utils/getLocalStorage');
-const checkForLocalStorage = require('../utils/checkForLocalStorage');
+
+// Redux
+import { connect } from 'react-redux';
+const setInitialRecipes = require('../actions/set_initial_recipes');
+const x = setInitialRecipes(); // CURRENT ERROR
+console.log('working');
+connect((store) => {
+	return {
+		recipes: store.recipes,
+		localStorageSupport: store.localStorageSupport
+	};
+});
 
 module.exports = class Recipes extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state = {
-			recipes: getLocalStorage,
-			localStorageSupport: checkForLocalStorage
-		};
+	componentWillMount() {
+		this.props.dispatch(setInitialRecipes());
 	}
 	render() {
 		// Create individual recipes to pass onto RecipeList component
 		let currentRecipes;
-		if (_.isEmpty(this.state.recipes)) {
+		if (_.isEmpty(this.props.recipes)) {
 			currentRecipes = null;
 		} else {
-			currentRecipes = this.state.recipes.map( (recipe) => {
+			currentRecipes = this.props.recipes.map( (recipe) => {
 				let strInstructions = recipe.instructions.join('\n');
 				let shortInstructions;
 				strInstructions.length > 115 ?

@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import SetLocalStorageReducer from './reducer_recipes_list';
+import reducer_toggle_localStorage from './reducer_toggle_localStorage';
+import reducer_recipes from './reducer_recipes';
 
 const rootReducer = combineReducers({
-	localStorageSupported: SetLocalStorageReducer
+	localStorageSupport: reducer_toggle_localStorage,
+	recipes: reducer_recipes
 });
 
 export default rootReducer;
